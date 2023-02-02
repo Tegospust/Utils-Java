@@ -174,4 +174,38 @@ public class StrOper {
     {
         return (setNewString(aMainStr)).delete(aStart, aEnd).toString();
     }
+    
+    
+    
+    /**
+     * Dopasowanie podci¹gu <b>aSubStr</b> w ci¹gu <b>aStr</b><br>
+     * @param aStr ci¹g
+     * @param aSubStr podci¹g
+     * @return = -1 brak dopasowania<br>
+     *         > -1 dopasowanie od pozycji równej zwróconej wartoœci 
+     */
+    public static int pascalPos(String aStr, String aSubStr) {
+        int start = 0;
+        boolean match = false;
+        if (aStr.equals(aSubStr))
+            return start;
+        for(;true;) {
+            if (start + aSubStr.length() > aStr.length())
+                break;
+            String chunk = aStr.substring(start, aSubStr.length()+start);
+//            System.out.printf("%s, %d, %s,%d\n",chunk, chunk.length(), aSubStr,aSubStr.length());
+            if (aStr.substring(start, aSubStr.length()+start).equals(aSubStr)) {
+                match = true;
+                break;
+            }
+            start += 1;
+        }
+        return match ? start : -1;
+    }
+
+// do testowania funkcji    
+//    public static void main(String... args) {
+//        System.out.println(pascalPos("odprowadzi³".toLowerCase(), "Wadzi³".toUpperCase()));
+//    }
+    
 }

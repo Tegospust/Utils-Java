@@ -6,6 +6,7 @@
 package com.ounis.utils;
 
 import java.util.Scanner;
+import javax.swing.JOptionPane;
 
 
 /**
@@ -19,7 +20,8 @@ public class TestMain {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-
+        
+        var MAX = 30;
         
         int i = 0;
         int value = 0;
@@ -32,7 +34,13 @@ public class TestMain {
             
             //String l = (new Scanner(System.in)).next(); 
         }
-        System.out.println("");
+        String rid = "ROMANI ITE DOMUM";
+        System.out.println("\n"+Strings.reverse(rid));
+        //}as of release 10, 'var' is a restricted type name and cannot be used for type declarations or as the element type of an array
+        var f = 0;
+        System.out.printf("\n%d\n",Strings.ord("ROMANI ITE DOMUM".charAt(3)));
+        JOptionPane.showMessageDialog(null, MAX, "Info", JOptionPane.QUESTION_MESSAGE);
     }
     
 }
+
