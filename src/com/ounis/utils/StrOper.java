@@ -179,10 +179,12 @@ public class StrOper {
     
     /**
      * Dopasowanie podci¹gu <b>aSubStr</b> w ci¹gu <b>aStr</b><br>
+     * <font sinze="4" color="#ff0000">CASESENSITIVE !!!</font><br>
      * @param aStr ci¹g
      * @param aSubStr podci¹g
      * @return = -1 brak dopasowania<br>
-     *         > -1 dopasowanie od pozycji równej zwróconej wartoœci 
+     *         > -1 dopasowanie w <b>aStr</b> od pozycji równej zwróconej wartoœci<br><br> 
+     * <i>(\m/ Pascal)</i>
      */
     public static int pascalPos(String aStr, String aSubStr) {
         int start = 0;
@@ -202,10 +204,53 @@ public class StrOper {
         }
         return match ? start : -1;
     }
-
+    /**
+     * Dopasowanie podci¹gu <b>aSubStr</b> w ci¹gu <b>aStr</b><br>
+     * <font sinze="4" color="#ff0000">CASESENSITIVE !!!</font><br>
+     * (<u>java.lang.String.charAt() version</u>)
+     * @param aStr ci¹g
+     * @param aSubStr podci¹g
+     * @return = -1 brak dopasowania<br>
+     *         > -1 dopasowanie w <b>aStr</b> od pozycji równej zwróconej wartoœci<br><br> 
+     * <i>(\m/ Pascal)</i>
+     */
+    private static int testPos(String aStr, String aSubStr) {
+        int start = -1;
+        boolean match = true;
+        if (aStr.equals(aSubStr)) 
+            return 0;
+        if (aSubStr.length() > aStr.length())
+            return -1;
+        start = 0;
+        while(true) {
+            for(int i = 0;i < aSubStr.length();i++) {
+    //            System.out.printf("%d - %s\n", start,aStr.charAt(start));
+                if( Strings.ord(aStr.charAt(start + i)) ==  Strings.ord(aSubStr.charAt(i))) {
+                    match = true;
+                }
+                else {
+                    match = false;
+                }
+                if (!match)
+                    break;
+            }
+            if (match)
+                break;
+            start += 1;
+            if (start + aSubStr.length()-1 > aStr.length()-1) {
+                start = -1;
+                break;
+            }
+                
+        }
+        return match ? start : -1;
+    }
+    
 // do testowania funkcji    
-//    public static void main(String... args) {
+    public static void main(String... args) {
 //        System.out.println(pascalPos("odprowadzi³".toLowerCase(), "Wadzi³".toUpperCase()));
-//    }
+//        System.out.println("przyDUPAs".contains("dupa"));
+        System.out.println(testPos("ROMANI","an"));
+    }
     
 }
