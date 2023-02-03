@@ -179,7 +179,7 @@ public class StrOper {
     
     /**
      * Dopasowanie podci퉓u <b>aSubStr</b> w ci퉓u <b>aStr</b><br>
-     * <font sinze="4" color="#ff0000">CASESENSITIVE !!!</font><br>
+     * <b><font sinze="4" color="#ff0000">CASESENSITIVE !!!</font></b><br>
      * @param aStr ci퉓
      * @param aSubStr podci퉓
      * @return = -1 brak dopasowania<br>
@@ -204,9 +204,10 @@ public class StrOper {
         }
         return match ? start : -1;
     }
+    
     /**
      * Dopasowanie podci퉓u <b>aSubStr</b> w ci퉓u <b>aStr</b><br>
-     * <font sinze="4" color="#ff0000">CASESENSITIVE !!!</font><br>
+     * <b><font sinze="4" color="#ff0000">CASESENSITIVE !!!</font></b><br>
      * (<u>java.lang.String.charAt() version</u>)
      * @param aStr ci퉓
      * @param aSubStr podci퉓
@@ -222,11 +223,14 @@ public class StrOper {
         if (aSubStr.length() > aStr.length())
             return -1;
         start = 0;
-        while(true) {
+        for(;true;) {
             for(int i = 0;i < aSubStr.length();i++) {
     //            System.out.printf("%d - %s\n", start,aStr.charAt(start));
                 if( Strings.ord(aStr.charAt(start + i)) ==  Strings.ord(aSubStr.charAt(i))) {
                     match = true;
+//                    System.out.printf("str[%d]=%s - sub[%d]=%s\n", 
+//                            start+i,aStr.charAt(start + i), i,
+//                            aSubStr.charAt(i));
                 }
                 else {
                     match = false;
@@ -237,7 +241,7 @@ public class StrOper {
             if (match)
                 break;
             start += 1;
-            if (start + aSubStr.length()-1 > aStr.length()-1) {
+            if (start + aSubStr.length()-1 > aStr.length()-1) { 
                 start = -1;
                 break;
             }
@@ -248,9 +252,12 @@ public class StrOper {
     
 // do testowania funkcji    
     public static void main(String... args) {
+        String Str = " bcsadsads dads aa a ds ad";//"przyDUPAs";
+        String subStr = " a ";//"DUPA";
+                
 //        System.out.println(pascalPos("odprowadzi�".toLowerCase(), "Wadzi�".toUpperCase()));
-//        System.out.println("przyDUPAs".contains("dupa"));
-        System.out.println(testPos("ROMANI","an"));
+        System.out.println(Str.contains(subStr));
+        System.out.println(testPos(Str,subStr));
     }
     
 }
