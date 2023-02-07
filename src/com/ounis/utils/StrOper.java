@@ -186,7 +186,8 @@ public class StrOper {
      *         > -1 dopasowanie w <b>aStr</b> od pozycji równej zwróconej wartoœci<br><br> 
      * <i>(\m/ Pascal)</i>
      */
-    public static int pascalPos(String aStr, String aSubStr) {
+    public static int pascalPos(String aStr, String aSubStr) 
+    {
         int start = 0;
         boolean match = false;
         if (aStr.equals(aSubStr))
@@ -215,7 +216,8 @@ public class StrOper {
      *         > -1 dopasowanie w <b>aStr</b> od pozycji równej zwróconej wartoœci<br><br> 
      * <i>(\m/ Pascal)</i>
      */
-    private static int testPos(String aStr, String aSubStr) {
+    private static int testPos(String aStr, String aSubStr) 
+    {
         int start = -1;
         boolean match = true;
         if (aStr.equals(aSubStr)) 

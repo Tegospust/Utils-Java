@@ -16,7 +16,7 @@ import java.util.List;
 public class FibonacciClass {
     private final int range;
     
-    FibonacciClass(int aRange) {
+    public FibonacciClass(int aRange) {
         this.range = aRange;
     }
     
@@ -37,7 +37,7 @@ public class FibonacciClass {
 //        return arr;
     }
     public List<Integer> generate() {
-        List<Integer> result = new ArrayList<Integer>();
+        List<Integer> result = new ArrayList<>();
         if (this.range > 0) {
             int a = 0;
             int b = 1;
@@ -58,7 +58,7 @@ public class FibonacciClass {
         for (Integer i: (new FibonacciClass(1000)).generateRecursive()) {
             System.out.print(String.format("%d ", i));
         }
-       
+        
         System.out.println();
         
 
