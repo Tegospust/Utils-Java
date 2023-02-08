@@ -39,6 +39,10 @@ public class UtilsArrays {
         return result;
     }
     
+    /**
+     * do testów
+     * @param args 
+     */
     public static void main(String... args) {
 //        ArrayList<Integer> alI = (ArrayList<Integer>) (new FibonacciClass(1000)).generate();
 //        Integer[] arrI = conv2IntegerArr(alI.toArray());

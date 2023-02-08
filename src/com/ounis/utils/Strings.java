@@ -19,6 +19,14 @@ public class Strings {
         return (new StringBuilder(s)).reverse().toString();
 // stara wersja        
 //        var result = "";
+//        for(char c: s.toCharArray()) {
+//            result = c + result;
+//        }
+//        return result;
+
+//      lub
+
+//        var result = "";
 //        char[] buff = s.toCharArray();
 //        for(int i = buff.length-1;i > -1;i--) 
 //            result += buff[i];
